@@ -71,12 +71,18 @@ function greaterThan10(obj){
 ////////// PROBLEM 3 //////////
 
 /*
-  Write a function called double that takes in an object.
-  Write a for in loop that loops over the object and changes every value to be itself multipled by 2.
-  Return the updated object.
+Write a function called double that takes in an object.
+Write a for in loop that loops over the object and changes every value to be itself multipled by 2.
+Return the updated object.
 */
 
 //Code Here
+function double(obj) {
+  for(var key in obj) {
+    obj[key] = obj[key] * 2
+  }
+  return obj 
+}
 
 
 
@@ -91,37 +97,48 @@ function greaterThan10(obj){
 */
 
 //Code Here
-
-
+function secrets(obj){
+  let theSecret = '';
+  for(var key in obj) {
+    if(key.startsWith ('sh')){
+      theSecret += obj[key]
+    }
+  }
+  return theSecret
+}
 
 /* 
-  Sometimes it's needed to delete object properties. 
-  All you need is the word delete before a reference to the object property value. 
-  Uncomment the example below to see a for in loop deleting all the properties inside an object.
+Sometimes it's needed to delete object properties. 
+All you need is the word delete before a reference to the object property value. 
+Uncomment the example below to see a for in loop deleting all the properties inside an object.
 */
 
-// var deleteAllThethings = {
-//   one: 1,
-//   two: 2,
-//   three: 3
-// }
+var deleteAllThethings = {
+  one: 1,
+  two: 2,
+  three: 3
+}
 
-// for(var key in deleteAllThethings) {
-//   delete deleteAllThethings[key]
-// }
+for(var key in deleteAllThethings) {
+  delete deleteAllThethings[key]
+}
 
-// console.log(deleteAllThethings)
+console.log(deleteAllThethings)
 
 
 
 ////////// PROBLEM 5 //////////
 
 /*
-  Write a function called removePassword that takes in an object.
-  Delete the property password and return the object.
+Write a function called removePassword that takes in an object.
+Delete the property password and return the object.
 */
 
 //Code Here
+function removePassword(obj){
+  delete obj.password;
+  return(obj)
+}
 
 
 
@@ -141,7 +158,11 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+for(let key in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[key] > 100) {
+    delete deleteTheBigNumbers[key]
+  }
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -154,7 +175,14 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+function startsWithK(obj){
+  for(let key in obj){
+    if(key.startsWith ('k')){
+      delete obj.key
+    }
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 8 //////////
