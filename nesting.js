@@ -91,7 +91,6 @@ function removeDuplicates(arr){
 }
 
 
-
 ////////// PROBLEM 3 //////////
 
 // Do not edit the code below.
@@ -117,8 +116,11 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1]
+var fluffy2ndFriend = cat.catFriends[1].name
+
+// console.log(grumpyActivity)
+// console.log(fluffy2ndFriend)
 
 
 
@@ -159,8 +161,15 @@ var myCar = {
 */
 
 //Code Here
+function recordCleaner (arr){
+  for (let i = 0; i < myCar.accidents.atFaultForAccident.length; i++) {
+    myCar.accidents[i].atFaultForAccident = false
+  }
+  return arr
+}
 
 
+console.log(myCar.accidents[0])
 
 ////////// PROBLEM 5 //////////
 
