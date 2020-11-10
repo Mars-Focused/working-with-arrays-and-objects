@@ -162,14 +162,18 @@ var myCar = {
 
 //Code Here
 function recordCleaner (arr){
-  for (let i = 0; i < myCar.accidents.atFaultForAccident.length; i++) {
-    myCar.accidents[i].atFaultForAccident = false
+  for (let key in myCar) {
+    if(typeof myCar[key] === "object"){
+      for (let prop in myCar[key]){
+        myCar[key][prop].atFaultForAccident = false
+      }
+    }
   }
-  return arr
 }
+console.log(myCar)
 
 
-console.log(myCar.accidents[0])
+console.log(myCar.accidents[0].atFaultForAccident)
 
 ////////// PROBLEM 5 //////////
 
@@ -187,5 +191,17 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
+function looper () {
+  numsArr.forEach((element) => {
+    for (let i = 0; i < element.length; i++) {
+      if (element[i] % 2 === 0) {
+        element[i] = "even";
+      } else {
+        element[i] = "odd";
+      }
+    }
+  })
+  return numsArr;
+}
 
 
