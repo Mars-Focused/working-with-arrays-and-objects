@@ -58,11 +58,6 @@ function employeeUpdater(){
     } else if(employees[i].firstName === 'Lorie'){
       employees[i].department = 'HR'
     }
-    // console.log(i)
-    // findTheo = i.map((element) => {
-    //   if(firstName === Theo){
-    //   return findTheo}
-    // })
   }
   return employees
 }
@@ -83,6 +78,17 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
+function removeDuplicates(arr){
+  for(let i=0; i < arr.length; i++){
+    for(let j = i + 1; j < arr.length; j++) {
+      if(arr[i] === arr[j]){
+        arr.splice(j, 1)
+        j--
+      }
+    }
+  }
+  return arr
+}
 
 
 
